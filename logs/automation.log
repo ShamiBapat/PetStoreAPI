@@ -25,3 +25,21 @@
 17:47:40.154 [main] INFO  api.test.UserModuleTests - ********** User updated ***************
 17:47:40.353 [main] INFO  api.test.UserModuleTests - **********   Deleting User  ***************
 17:47:40.564 [main] INFO  api.test.UserModuleTests - ********** User deleted ***************
+18:16:15.292 [main] DEBUG api.test.StoreModuleTests - debugging.....
+18:16:15.305 [main] INFO  api.test.StoreModuleTests - ********** placing an order  ***************
+18:16:17.589 [main] INFO  api.test.StoreModuleTests - ********** Order placed sucessfully  ***************
+18:16:17.606 [main] INFO  api.test.StoreModuleTests - ********** Reading Store Info ***************
+18:16:17.846 [main] INFO  api.test.StoreModuleTests - ********** Store info displayed ***************
+18:16:17.848 [main] INFO  api.test.StoreModuleTests - ********** Store inforation by status ***************
+18:16:18.072 [main] INFO  api.test.StoreModuleTests - ********** Status displayed ***************
+18:16:18.074 [main] INFO  api.test.StoreModuleTests - ********** Deleting order placed ***************
+18:16:18.285 [main] INFO  api.test.StoreModuleTests - ********** order deleted ***************
+18:16:18.463 [main] DEBUG api.test.UserModuleTests - debugging.....
+18:16:18.464 [main] INFO  api.test.UserModuleTests - ********** Creating user  ***************
+18:16:18.684 [main] INFO  api.test.UserModuleTests - **********User is creatged  ***************
+18:16:18.686 [main] INFO  api.test.UserModuleTests - ********** Reading User Info ***************
+18:16:18.885 [main] INFO  api.test.UserModuleTests - **********User info  is displayed ***************
+18:16:18.887 [main] INFO  api.test.UserModuleTests - ********** Updating User ***************
+18:16:19.103 [main] INFO  api.test.UserModuleTests - ********** User updated ***************
+18:16:19.331 [main] INFO  api.test.UserModuleTests - **********   Deleting User  ***************
+18:16:19.534 [main] INFO  api.test.UserModuleTests - ********** User deleted ***************
