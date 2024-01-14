@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class storePOJO {
 	
-	int id;
-	int petId;
-	int quantity;
-	Date shipDate;
-	String status="placed";
-	String complete="true";
+	private int id;
+	private int petId;
+	private int quantity;
+	private Date shipDate;
+	private String status="placed";
+	private String complete="true";
 	
 	public int getId() {
 		return id;

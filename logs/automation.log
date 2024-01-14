@@ -43,3 +43,12 @@
 18:16:19.103 [main] INFO  api.test.UserModuleTests - ********** User updated ***************
 18:16:19.331 [main] INFO  api.test.UserModuleTests - **********   Deleting User  ***************
 18:16:19.534 [main] INFO  api.test.UserModuleTests - ********** User deleted ***************
+00:44:39.026 [main] DEBUG api.test.UserModuleTests - debugging.....
+00:44:39.048 [main] INFO  api.test.UserModuleTests - ********** Creating user  ***************
+00:44:41.636 [main] INFO  api.test.UserModuleTests - **********User is creatged  ***************
+00:44:41.645 [main] INFO  api.test.UserModuleTests - ********** Reading User Info ***************
+00:44:41.871 [main] INFO  api.test.UserModuleTests - **********User info  is displayed ***************
+00:44:41.876 [main] INFO  api.test.UserModuleTests - ********** Updating User ***************
+00:44:42.105 [main] INFO  api.test.UserModuleTests - ********** User updated ***************
+00:44:42.343 [main] INFO  api.test.UserModuleTests - **********   Deleting User  ***************
+00:44:42.548 [main] INFO  api.test.UserModuleTests - ********** User deleted ***************

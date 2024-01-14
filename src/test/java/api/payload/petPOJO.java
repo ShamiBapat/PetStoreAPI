@@ -1,13 +1,13 @@
 package api.payload;
 
 public class petPOJO {
-	
 	int id;
-	String category[];
-	String name;
-	String photoUrls[];
-	String tags[];
-	String status;
+	TagsPojo tags;
+	CategoryPojo category;
+	private String name;
+	private String photoUrls;
+	
+	private String status="available";
 	
 	public int getId() {
 		return id;
@@ -15,11 +15,17 @@ public class petPOJO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String[] getCategory() {
+	public CategoryPojo getCategory() {
 		return category;
 	}
-	public void setCategory(String[] category) {
+	public void setCategory(CategoryPojo category) {
 		this.category = category;
+	}
+	public TagsPojo getTags(TagsPojo tags)	{
+		return tags;	 
+	}
+	public void setTags(TagsPojo tags) {
+		this.tags = tags;
 	}
 	public String getName() {
 		return name;
@@ -27,17 +33,11 @@ public class petPOJO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String[] getPhotoUrls() {
+	public String getPhotoUrls() {
 		return photoUrls;
 	}
-	public void setPhotoUrls(String[] photoUrls) {
-		this.photoUrls = photoUrls;
-	}
-	public String[] getTags() {
-		return tags;
-	}
-	public void setTags(String[] tags) {
-		this.tags = tags;
+	public void setPhotoUrls(String string) {
+		this.photoUrls = string;
 	}
 	public String getStatus() {
 		return status;

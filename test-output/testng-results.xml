@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-10T13:45:28 EST" name="Default suite" finished-at="2024-01-10T13:45:35 EST" duration-ms="7690">
+  <suite started-at="2024-01-14T18:41:16 EST" name="Default suite" finished-at="2024-01-14T18:41:19 EST" duration-ms="3008">
     <groups>
     </groups>
-    <test started-at="2024-01-10T13:45:28 EST" name="Default test" finished-at="2024-01-10T13:45:35 EST" duration-ms="7690">
-      <class name="api.test.StoreModuleTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:api.test.StoreModuleTests@130d63be]" started-at="2024-01-10T13:45:28 EST" name="setUp" finished-at="2024-01-10T13:45:29 EST" duration-ms="807" status="PASS">
+    <test started-at="2024-01-14T18:41:16 EST" name="Default test" finished-at="2024-01-14T18:41:19 EST" duration-ms="3008">
+      <class name="api.test.PetModuleTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:api.test.PetModuleTests@7d8995e]" started-at="2024-01-14T18:41:16 EST" name="setUp" finished-at="2024-01-14T18:41:16 EST" duration-ms="124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testPostStore()[pri:1, instance:api.test.StoreModuleTests@130d63be]" started-at="2024-01-10T13:45:29 EST" name="testPostStore" finished-at="2024-01-10T13:45:35 EST" duration-ms="6015" status="PASS">
+        <test-method signature="testPostPet()[pri:1, instance:api.test.PetModuleTests@7d8995e]" started-at="2024-01-14T18:41:16 EST" name="testPostPet" finished-at="2024-01-14T18:41:18 EST" duration-ms="2338" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPostStore -->
-        <test-method signature="testGetStoreDetails()[pri:2, instance:api.test.StoreModuleTests@130d63be]" started-at="2024-01-10T13:45:35 EST" name="testGetStoreDetails" finished-at="2024-01-10T13:45:35 EST" duration-ms="288" status="PASS">
+        </test-method> <!-- testPostPet -->
+        <test-method signature="getPetByID()[pri:2, instance:api.test.PetModuleTests@7d8995e]" started-at="2024-01-14T18:41:18 EST" name="getPetByID" finished-at="2024-01-14T18:41:18 EST" duration-ms="252" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetStoreDetails -->
-        <test-method signature="testGetInventoryStatus()[pri:3, instance:api.test.StoreModuleTests@130d63be]" started-at="2024-01-10T13:45:35 EST" name="testGetInventoryStatus" finished-at="2024-01-10T13:45:35 EST" duration-ms="254" status="PASS">
+        </test-method> <!-- getPetByID -->
+        <test-method signature="getPetByStatus()[pri:3, instance:api.test.PetModuleTests@7d8995e]" started-at="2024-01-14T18:41:18 EST" name="getPetByStatus" finished-at="2024-01-14T18:41:19 EST" duration-ms="240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetInventoryStatus -->
-        <test-method signature="testDeleteOrder()[pri:4, instance:api.test.StoreModuleTests@130d63be]" started-at="2024-01-10T13:45:35 EST" name="testDeleteOrder" finished-at="2024-01-10T13:45:35 EST" duration-ms="254" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteOrder -->
-      </class> <!-- api.test.StoreModuleTests -->
+        </test-method> <!-- getPetByStatus -->
+      </class> <!-- api.test.PetModuleTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

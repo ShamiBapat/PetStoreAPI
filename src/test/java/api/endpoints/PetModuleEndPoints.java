@@ -31,6 +31,31 @@ public class PetModuleEndPoints {
 		return response;
 		
 	}
+	public static Response updateExistingPet(petPOJO payload)
+	{
+		String updatePet_url = getURL().getString("updatePet_url");
+		Response response = given()
+							.contentType(ContentType.JSON)
+							.accept(ContentType.JSON)
+							.body(payload)
+						.when()
+							.put(updatePet_url);
+		return response;
+	}
+	public static Response updateStoreStatus(int petID, petPOJO payload) 
+	{
+		String updateStoreStatus_url=getURL().getString("updateStoreStatus_url");
+		Response response = given()
+							.accept(ContentType.JSON)
+							.contentType(ContentType.MULTIPART)
+							.pathParam("petID", petID)
+							.formParam("status", "sold")
+							.formParam("name","Marshall")
+							.body(payload)
+						.when()
+							.post(updateStoreStatus_url);
+		return response;
+	}
 	public static Response getPetByID(int petID)
 	{
 		String getPet_url = getURL().getString("getPet_url");
@@ -41,4 +66,23 @@ public class PetModuleEndPoints {
 						.get(getPet_url);
 		return response;
 	}
+	public static Response getPetByStatus()
+	{
+		String getPet_byStatus_url = getURL().getString("getPet_byStatus_url");
+		Response response = given()
+						.accept(ContentType.JSON)
+						.queryParam("status", "pending")
+					.when()
+						.get(getPet_byStatus_url);
+		return response;
+	}
+	public static Response deletePet(int petID)
+	{
+		String deletePet_url=getURL().getString("deletePet_url");
+		Response response = given()
+							.when()
+								.delete(deletePet_url);
+		return response;
+	}
+	
 }
