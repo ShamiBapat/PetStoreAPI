@@ -46,8 +46,9 @@ public class PetModuleEndPoints {
 	{
 		String updateStoreStatus_url=getURL().getString("updateStoreStatus_url");
 		Response response = given()
-							.accept(ContentType.JSON)
+							.accept("*/*")
 							.contentType(ContentType.MULTIPART)
+							//.contentType("application/x-www-form-urlencoded")
 							.pathParam("petID", petID)
 							.formParam("status", "sold")
 							.formParam("name","Marshall")
@@ -80,6 +81,8 @@ public class PetModuleEndPoints {
 	{
 		String deletePet_url=getURL().getString("deletePet_url");
 		Response response = given()
+								.accept(ContentType.JSON)
+								.pathParam("petID", petID)
 							.when()
 								.delete(deletePet_url);
 		return response;

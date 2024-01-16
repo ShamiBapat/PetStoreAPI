@@ -1,5 +1,8 @@
 package api.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -8,6 +11,7 @@ import com.github.javafaker.Faker;
 
 import api.endpoints.PetModuleEndPoints;
 import api.payload.CategoryPojo;
+import api.payload.StatusValues;
 import api.payload.TagsPojo;
 import api.payload.petPOJO;
 import io.restassured.response.Response;
@@ -22,23 +26,27 @@ public class PetModuleTests {
 	{
 		faker = new Faker();
 		petPayload = new petPOJO();
-	//	String category[]= {"1","Dalmation"}; //how to pass the string array values
 		
 		petPayload.setId(faker.animal().hashCode());
 		petPayload.setName(faker.dog().name());
 		
 		CategoryPojo category = new CategoryPojo();
-		category.setCategoryID(211);
-		category.setCategoryName("Dalmation");
+		category.setID(faker.hashCode());
+		category.setName(faker.dog().breed());
 		petPayload.setCategory(category);
 		
+		List<TagsPojo> allTags = new ArrayList<>();
 		TagsPojo tags = new TagsPojo();
 		tags.setId(1);
 		tags.setName("Dog");
-		petPayload.setTags(tags);
+		petPayload.setTags(allTags);
 		
+		String[] photoURLs = new String[] {"https://abc.jpeg"};
+		petPayload.setPhotoUrls(photoURLs);
+		
+		petPayload.setStatus(StatusValues.available);
 	}
-
+	
 	@Test(priority=1)
 	public void testPostPet() 
 	{
@@ -55,9 +63,36 @@ public class PetModuleTests {
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 	@Test(priority=3)
+	public void updatePet()
+	{
+		String newPetname = faker.animal().name();
+		petPayload.setName(newPetname);
+		System.out.println("New name ="+newPetname);
+		Response response = PetModuleEndPoints.updateExistingPet(this.petPayload);
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+	}
+	
+	@Test(priority=4)
+	public void updatePetStoreStatus() 
+	{
+		Response response = PetModuleEndPoints.updateStoreStatus(this.petPayload.getId(),this.petPayload);
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+	}
+	//@Test(priority=5)
 	public void getPetByStatus()
 	{
 		Response response = PetModuleEndPoints.getPetByStatus();
 		response.then().log().all();
 	}
+	@Test(priority=6)
+	public void deletePet()
+	{
+		System.out.println("Deleted Pet id ="+this.petPayload.getId());
+		Response response = PetModuleEndPoints.deletePet(this.petPayload.getId());
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+	}
+	
 }

@@ -1,14 +1,15 @@
 package api.payload;
 
+import java.util.List;
+
 public class petPOJO {
 	int id;
-	TagsPojo tags;
+	List<TagsPojo> tags;
 	CategoryPojo category;
 	private String name;
-	private String photoUrls;
-	
-	private String status="available";
-	
+	private String photoUrls[];
+	StatusValues status;
+
 	public int getId() {
 		return id;
 	}
@@ -21,10 +22,10 @@ public class petPOJO {
 	public void setCategory(CategoryPojo category) {
 		this.category = category;
 	}
-	public TagsPojo getTags(TagsPojo tags)	{
-		return tags;	 
+	public List<TagsPojo> getTags() {
+		return tags;
 	}
-	public void setTags(TagsPojo tags) {
+	public void setTags(List<TagsPojo> tags) {
 		this.tags = tags;
 	}
 	public String getName() {
@@ -32,20 +33,17 @@ public class petPOJO {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getPhotoUrls() {
+	}	
+	public String[] getPhotoUrls() {
 		return photoUrls;
 	}
-	public void setPhotoUrls(String string) {
-		this.photoUrls = string;
+	public void setPhotoUrls(String[] photoUrls) {
+		this.photoUrls = photoUrls;
 	}
-	public String getStatus() {
+	public StatusValues getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(StatusValues status) {
 		this.status = status;
 	}
-	
-	
-
 }

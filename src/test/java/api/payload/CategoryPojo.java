@@ -6,16 +6,16 @@ public class CategoryPojo {
 	private String name;
 	
 	
-	public int getCategoryID() {
+	public int getID() {
 		return id;
 	}
-	public int setCategoryID(int id) {
+	public int setID(int id) {
 		return this.id = id;
 	}
-	public String getCategoryName() {
+	public String getName() {	
 		return name;
 	}
-	public String setCategoryName(String name) {
+	public String setName(String name) {
 		return this.name = name;
 	}
 	
