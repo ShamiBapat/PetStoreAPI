@@ -15,6 +15,7 @@ import api.payload.StatusValues;
 import api.payload.TagsPojo;
 import api.payload.petPOJO;
 import io.restassured.response.Response;
+import static org.hamcrest.Matchers.*;
 
 public class PetModuleTests {
 	
@@ -39,6 +40,7 @@ public class PetModuleTests {
 		TagsPojo tags = new TagsPojo();
 		tags.setId(1);
 		tags.setName("Dog");
+		allTags.add(tags);
 		petPayload.setTags(allTags);
 		
 		String[] photoURLs = new String[] {"https://abc.jpeg"};
@@ -56,13 +58,20 @@ public class PetModuleTests {
 		
 	}
 	@Test(priority=2)
+	public void uploadPetImage()
+	{
+		Response response = PetModuleEndPoints.uploadPetImage(this.petPayload.getId());
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+	}
+	@Test(priority=3)
 	public void getPetByID()
 	{
 		Response response =PetModuleEndPoints.getPetByID(this.petPayload.getId());
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
-	@Test(priority=3)
+	@Test(priority=4)
 	public void updatePet()
 	{
 		String newPetname = faker.animal().name();
@@ -73,20 +82,20 @@ public class PetModuleTests {
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 	
-	@Test(priority=4)
+	@Test(priority=5)
 	public void updatePetStoreStatus() 
 	{
 		Response response = PetModuleEndPoints.updateStoreStatus(this.petPayload.getId(),this.petPayload);
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
-	//@Test(priority=5)
+	//@Test(priority=6)
 	public void getPetByStatus()
 	{
 		Response response = PetModuleEndPoints.getPetByStatus();
 		response.then().log().all();
 	}
-	@Test(priority=6)
+	@Test(priority=7)
 	public void deletePet()
 	{
 		System.out.println("Deleted Pet id ="+this.petPayload.getId());

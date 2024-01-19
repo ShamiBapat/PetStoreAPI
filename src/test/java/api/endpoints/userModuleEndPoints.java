@@ -8,7 +8,6 @@ import io.restassured.response.Response;
 public class userModuleEndPoints {
 	
 //this class contains CRUD(create,retrieve,update and delete requests) operations implementations only(exclude validations in this class)
-	
 	public static Response createUser(userPOJO payload)
 	{
 		Response response=given()

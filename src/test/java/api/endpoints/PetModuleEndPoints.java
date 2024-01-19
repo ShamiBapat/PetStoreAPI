@@ -2,6 +2,7 @@ package api.endpoints;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.File;
 import java.util.ResourceBundle;
 
 import api.payload.petPOJO;
@@ -46,14 +47,14 @@ public class PetModuleEndPoints {
 	{
 		String updateStoreStatus_url=getURL().getString("updateStoreStatus_url");
 		Response response = given()
-							.accept("*/*")
-							.contentType(ContentType.MULTIPART)
-							//.contentType("application/x-www-form-urlencoded")
+							.accept(ContentType.JSON)
+							//.contentType(ContentType.URLENC) --this also works 
+							.header("Content-Type","application/x-www-form-urlencoded")
 							.pathParam("petID", petID)
 							.formParam("status", "sold")
 							.formParam("name","Marshall")
-							.body(payload)
-						.when()
+						//	.body(payload)
+							.when()
 							.post(updateStoreStatus_url);
 		return response;
 	}
@@ -66,6 +67,21 @@ public class PetModuleEndPoints {
 					.when()
 						.get(getPet_url);
 		return response;
+	}
+	public static Response uploadPetImage(int petID)
+	{
+		String uploadPetImage = getURL().getString("uploadPetImage");
+		File myFile = new File("C:\\Users\\umesh\\Desktop\\Numpy_Ninja\\CamelImage.jpg");
+		Response response=	given()
+							.multiPart("file", myFile)
+							.contentType("multipart/form-data")
+							//.contentType(ContentType.MULTIPART)
+							.accept(ContentType.JSON)
+							.pathParam("petID", petID)
+							.when()
+							.post(uploadPetImage);
+		return response;
+		
 	}
 	public static Response getPetByStatus()
 	{
