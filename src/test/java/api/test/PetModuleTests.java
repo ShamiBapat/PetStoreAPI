@@ -57,7 +57,8 @@ public class PetModuleTests {
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
 	}
-	@Test(priority=2)
+	//@Test(priority=2)    
+	//this test uploads a file from local sysytem so commenting it for now.
 	public void uploadPetImage()
 	{
 		Response response = PetModuleEndPoints.uploadPetImage(this.petPayload.getId());
